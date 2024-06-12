@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calender</title>
+  </head>
+  <body>
+    <h1>Days Reveal</h1>
+    <input type="text" id="monthInput" placeholder="Month of the year" />
+    <button onclick="calculateDays()">Confirm Days</button>
+    <p id="result"></p>
+  </body>
+</html>
+
+<script>
+  function calculateDays() {
+    let month = document.getElementById("monthInput").value.trim();
+    let daysInMonth = 0;
+
+    switch (month) {
+      case "january":
+      case "march":
+      case "may":
+      case "july":
+      case "august":
+      case "october":
+      case "december":
+        daysInMonth = 31;
+
+        break;
+      case "april":
+      case "june":
+      case "september":
+      case "november":
+        daysInMonth = 30;
+
+        break;
+      case "february":
+        daysInMonth = 28;
+
+        break;
+      default:
+        daysInMonth = "month does not exist";
+    }
+    document.getElementById("result").innerText =
+      typeof daysInMonth === "number"
+        ? `number of days in ${month}: ${daysInMonth}`
+        : daysInMonth;
+  }
+</script>
