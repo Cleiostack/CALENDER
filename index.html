@@ -15,7 +15,10 @@
 
 <script>
   function calculateDays() {
-    let month = document.getElementById("monthInput").value.trim();
+    let month = document
+      .getElementById("monthInput")
+      .value.toLowerCase()
+      .trim();
     let daysInMonth = 0;
 
     switch (month) {
